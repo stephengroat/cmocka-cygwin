@@ -1,0 +1,41 @@
+inherit cmake
+
+NAME="cmocka"
+VERSION=1.1.1
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="A powerful testing framework for C which only requires the standard C library"
+DESCRIPTION="An elegant unit testing framework for C with support for mock objects.
+It only requires the standard C library, works on a lot of platforms
+(including embedded) and with different compilers."
+HOMEPAGE="https://cmocka.org"
+SRC_URI="https://cmocka.org/files/1.1/cmocka-${VERSION}.tar.xz"
+
+# Build dependencies only
+DEPEND="doxygen"
+
+PKG_NAMES="libcmocka0 libcmocka-devel cmocka-doc"
+libcmocka0_CONTENTS="
+	usr/bin/cygcmocka-0.dll
+	usr/share/doc/cmocka
+"
+libcmocka_devel_CONTENTS="
+	usr/include/cmocka.h
+	usr/include/cmocka_pbc.h
+	usr/include/cmockery
+	usr/lib/cmake/cmocka
+	usr/lib/libcmocka.a
+	usr/lib/libcmocka.dll.a
+	usr/lib/pkgconfig/cmocka.pc
+"
+
+src_test() {
+	cd ${B}
+	make test
+}
+
+CYGCMAKE_ARGS="
+        -DWITH_STATIC_LIB=ON
+        -DWITH_CMOCKERY_SUPPORT=ON
+        -DUNIT_TESTING=ON
+"
