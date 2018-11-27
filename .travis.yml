@@ -2,7 +2,7 @@ os: windows
 language: sh
 install:
   - powershell Invoke-WebRequest https://cygwin.com/setup-x86_64.exe -OutFile c:\cygwin-setup.exe
-  - c:\cygwin-setup.exe --quiet-mode --no-shortcuts --no-startmenu --no-desktop --upgrade-also --only-site --site http://cygwin.mirror.constant.com/ --root c:\cygwin-root --local-package-dir c:\cygwin-setup-cache --packages automake,gcc-g++,make,pkg-config,openssl-devel,libicu-devel,zlib-devel,libcrypt-devel,perl,python3-devel,libsasl2-devel,cygport
+  - c:\\cygwin-setup.exe --quiet-mode --no-shortcuts --no-startmenu --no-desktop --upgrade-also --only-site --site http://cygwin.mirror.constant.com/ --root c:\\cygwin-root --local-package-dir c:\\cygwin-setup-cache --packages automake,gcc-g++,make,pkg-config,openssl-devel,libicu-devel,zlib-devel,libcrypt-devel,perl,python3-devel,libsasl2-devel,cygport
 build:
-  - c:\cygwin-root\bin\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport znc.cygport download"
-  - c:\cygwin-root\bin\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport znc.cygport all < /dev/null"
+  - c:\\cygwin-root\\bin\\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport znc.cygport download"
+  - c:\\cygwin-root\\bin\\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport znc.cygport all < /dev/null"
