@@ -2,6 +2,6 @@ os: windows
 language: sh
 install:
   - choco install cyg-get
-  - cyg-get.bat cygport doxygen gcc-fortran
+  - cyg-get.bat cygport doxygen gcc-fortran ninja
 script:
   - c:\\tools\\cygwin\\bin\\sh -lc "cd /cygdrive/$TRAVIS_BUILD_DIR; dos2unix cmocka.cygport && cygport cmocka.cygport download all"
