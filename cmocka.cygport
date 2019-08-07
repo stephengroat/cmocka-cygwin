@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="cmocka"
-VERSION=1.1.5
+VERSION=1.1.1
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="A powerful testing framework for C which only requires the standard C library"
