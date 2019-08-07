@@ -3,5 +3,5 @@ language: sh
 install:
   - choco install cygwin --params "--packages cygport"
 script:
-  - c:\\tools\\cygwin\\bin\\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport znc.cygport download"
-  - c:\\tools\\cygwin\\bin\\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport znc.cygport all < /dev/null"
+  - c:\\tools\\cygwin\\bin\\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport cmocka.cygport download"
+  - c:\\tools\\cygwin\\bin\\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport cmocka.cygport all < /dev/null"
