@@ -1,8 +1,11 @@
 os: windows
 language: sh
 install:
+  - pwd
+  - ls
+  - env
   - choco install cyg-get
-  - cyg-get.bat install cygport
+  - cyg-get.bat cygport
 script:
   - c:\\tools\\cygwin\\bin\\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport cmocka.cygport download"
   - c:\\tools\\cygwin\\bin\\sh -lc "cd $APPVEYOR_BUILD_FOLDER; cygport cmocka.cygport all < /dev/null"
