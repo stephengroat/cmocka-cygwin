@@ -1,7 +1,7 @@
 inherit cmake
 
 NAME="cmocka"
-VERSION=1.1.1
+VERSION=1.1.5
 RELEASE=1
 CATEGORY="Devel"
 SUMMARY="A powerful testing framework for C which only requires the standard C library"
@@ -12,7 +12,7 @@ HOMEPAGE="https://cmocka.org"
 SRC_URI="https://cmocka.org/files/1.1/cmocka-${VERSION}.tar.xz"
 
 # Build dependencies only
-DEPEND="doxygen"
+DEPEND="doxygen gcc-fortran ninja"
 
 PKG_NAMES="libcmocka0 libcmocka-devel cmocka-doc"
 libcmocka0_CONTENTS="
@@ -24,6 +24,7 @@ libcmocka_devel_CONTENTS="
 	usr/include/cmocka_pbc.h
 	usr/include/cmockery
 	usr/lib/cmake/cmocka
+	usr/lib/libcmocka-static.a
 	usr/lib/libcmocka.dll.a
 	usr/lib/pkgconfig/cmocka.pc
 "
