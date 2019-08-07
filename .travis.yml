@@ -4,4 +4,4 @@ install:
   - choco install cyg-get
   - cyg-get.bat cygport doxygen gcc-fortran ninja tree
 script:
-  - c:\\tools\\cygwin\\bin\\sh -lc "cd /cygdrive/$TRAVIS_BUILD_DIR; dos2unix cmocka.cygport && cygport cmocka.cygport download prep && tree && cygport cmocka.cygport all"
+  - c:\\tools\\cygwin\\bin\\sh -lc "cd /cygdrive/$TRAVIS_BUILD_DIR; dos2unix cmocka.cygport && cygport cmocka.cygport download prep && tree && cygport --debug cmocka.cygport all"
